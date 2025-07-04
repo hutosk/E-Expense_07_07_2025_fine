@@ -1,0 +1,52 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:layout="sap.ui.layout"
+    xmlns:table="sap.ui.table"
+    xmlns:u="sap.ui.unified"
+    xmlns:tnt="sap.tnt"
+>
+    <Dialog
+        id="idRejectDialog"
+        title="Confirm Reject"
+    >
+        <content>
+            <VBox id="vboxReject">
+                <Label id="lable1" />
+                <Text
+                    id="textApproveTimeoffId"
+                    text="   Do you want to reject  {/RowData/Requestor} expense?"
+                    wrapping="true"
+                />
+
+                <Label id="lable2" />
+                <Text
+                    id="textReason"
+                    text="Reason"
+                    wrapping="true"
+                />
+                <Input
+                    id="InRejectedReason"
+                    value=""
+                />
+            </VBox>
+        </content>
+
+        <beginButton>
+            <Button
+                id="btnApproveSubmit"
+                type="Emphasized"
+                text="Submit"
+                press="onConfRejectY"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                id="btnApproveClose"
+                text="Close"
+                press="onConfRejectN"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

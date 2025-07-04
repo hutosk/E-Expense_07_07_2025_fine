@@ -1,0 +1,24 @@
+{
+  "generationParameters": {
+    "generationDate": "Sat Jun 14 2025 09:30:00 GMT+0700 (Indochina Time)",
+    "generatorPlatform": "Visual Studio Code",
+    "serviceType": "SAP System (ABAP On Premise)",
+    "metadataFilename": "",
+    "serviceUrl": "http://alts4h1909.theatlantis.co.th:50000/sap/opu/odata/sap/ZOHR0011_SRV",
+    "appName": "expense_view_approval",
+    "appTitle": "Expense View approval",
+    "appDescription": "Expense View approval",
+    "appNamespace": "",
+    "ui5Theme": "sap_fiori_3",
+    "ui5Version": "1.71.69",
+    "enableCodeAssist": false,
+    "enableEslint": false,
+    "enableTypeScript": false,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.18.0",
+    "template": "Basic V2",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [],
+    "launchText": "In order to launch the generated app, simply run the following from the generated app root folder:\n\n```\n    npm start\n```"
+  }
+}

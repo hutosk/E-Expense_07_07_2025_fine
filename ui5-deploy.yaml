@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: expenseviewapproval
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: http://alts4h1909.theatlantis.co.th:50000/
+          client: '100'
+        app:
+          name: ZUI5HR0012
+          description: Expense View
+          package: ZALTHR
+          transport: S4HK901699
+        exclude:
+          - /test/

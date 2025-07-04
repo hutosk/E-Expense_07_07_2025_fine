@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZOHR0011_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Expense" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PeriodMonth"/>
+                    <PropertyRef Name="Requestor"/>
+                </Key>
+                <Property Name="PeriodMonth" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Requestor" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RequestDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Request Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RequestTime" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Request Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StatusDesc" Type="Edm.String" MaxLength="60" sap:unicode="false" sap:label="Status Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RequestorTitle" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Requestor Title" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RequestorFirstName" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Requestor First Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RequestorLastName" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Requestor Last Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RequestorFullName" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Requestor Full Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RequestorCompName" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Requestor Company Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RequestorEmail" Type="Edm.String" MaxLength="241" sap:unicode="false" sap:label="Requestor Email" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Approver" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Approver" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApproverTitle" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Approver Title" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApproverFirstName" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Approver First Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApproverLastName" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Approver Last Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Management" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Management" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ManagementTitle" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Management Title" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ManagementFirstName" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Management First Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ManagementLastName" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Management Last Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CalendarId" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Calendar ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CalendarDesc" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Calendar Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProjId" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Project ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProjDesc" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:label="Project Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CalendarDays" Type="Edm.Decimal" Precision="4" Scale="2" sap:unicode="false" sap:label="Calendar Days" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ActualDays" Type="Edm.Decimal" Precision="4" Scale="2" sap:unicode="false" sap:label="Actual Days" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ExpenseDays" Type="Edm.Decimal" Precision="4" Scale="2" sap:unicode="false" sap:label="Expense Days" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TotalAmount" Type="Edm.Decimal" Precision="23" Scale="2" sap:unicode="false" sap:label="Total Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SHMonthYear" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PeriodMonth"/>
+                </Key>
+                <Property Name="PeriodMonth" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Period Month" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZOHR0011_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ExpenseSet" EntityType="ZOHR0011_SRV.Expense" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SHMonthYearSet" EntityType="ZOHR0011_SRV.SHMonthYear" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://alts4h1909.theatlantis.co.th:50000/sap/opu/odata/sap/ZOHR0011_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://alts4h1909.theatlantis.co.th:50000/sap/opu/odata/sap/ZOHR0011_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
