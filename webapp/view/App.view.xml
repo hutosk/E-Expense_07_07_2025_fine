@@ -1,4 +1,4 @@
-<mvc:View controllerName="expenseviewapproval.controller.App"
+<mvc:View controllerName="zui5hr0012.controller.App"
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
