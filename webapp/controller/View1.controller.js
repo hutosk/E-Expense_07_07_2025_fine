@@ -9,7 +9,7 @@ sap.ui.define([
   function (Controller, JSONModel, Table, Column, Fragment, MessageBox) {
     "use strict";
 
-    return Controller.extend("expenseviewapproval.controller.View1", {
+    return Controller.extend("zui5hr0012.controller.View1", {
       /// return Controller.extend("expenseview.controller.View1", {
       onInit: function () {
         this._oRejectRow = null; // initialize
@@ -23,6 +23,8 @@ sap.ui.define([
         var oData = {};
         var oModel = new JSONModel(oData);
         this.getView().setModel(oModel);
+        //   this.byId("btnPdf").setVisible(true);
+        this.byId("tableExpense").setSelectionMode("None");
       },
 
       onListTeamChange: function (oEvent) {
@@ -83,8 +85,10 @@ sap.ui.define([
         if (sStatus == "NotSubmit" || sStatus == "Rejected") {
 
           this.byId("btnPdf").setVisible(false);
+          this.byId("tableExpense").setSelectionMode("None");
         } else {
           this.byId("btnPdf").setVisible(true);
+          this.byId("tableExpense").setSelectionMode("MultiToggle");
         }
 
         this._getExpenseSet(sTeamKey, sPeriod, sStatus,);
@@ -374,63 +378,70 @@ sap.ui.define([
         });
       },
 
-      onCallPress1: function (oEvent) {
-
-        var oCrossAppNavigator = sap.ushell.Container.getService("CrossApplicationNavigation");
-
-        var hash = oCrossAppNavigator.hrefForExternal({
-          target: {
-            semanticObject: "Expense",      // <-- ต้องตรงกับที่กำหนดในแอปปลายทาง
-            action: "displayDetail"       // <-- ต้องตรงกับที่กำหนดในแอปปลายทาง
-          },
-          params: {
-            Requestor: "CHUSANA",      // <-- ส่ง Parameters ที่จำเป็นทั้งหมด
-            PeriodMonth: "202507",
-            Mode: "Display",
-            ProjectId: "TN1",
-            CalendarId: "Z3"
-          }
-
-
-        });
 
 
 
 
-        // var oCrossAppNavigator = sap.ushell.Container.getService("CrossApplicationNavigation");
 
-        oCrossAppNavigator.toExternal({
-          target: {
-            shellHash: hash
-          }
-        });
-
-      },
 
       onCallPress: function (oEvent) {
+
+
+
+        var oButton = oEvent.getSource();
+
+        // Get the binding context of the row where the button resides
+        var oContext = oButton.getBindingContext();
+        var oRejectData = this.getOwnerComponent().getModel();
+
+       // if (oContext) {
+          // Get the actual data of the row (JSON object)
+          var oRowData = oContext.getObject();
+
+          //this._oRejectRow = oRowData; // initialize
+
+          //this.getOwnerComponent().myGlobalData = oRowData;
+
+         // this.getView().getModel().setProperty("/RowData", oRowData);
+          // this.getView().setModel(oRowData, "RowData");
+
+         // this._rejectDialog.then(function (oDialog) {
+            // this.getView().setModel(oRowData, "RowData");
+            //this._selectReject = "test select";
+           // oDialog.open();
+
+          //});
+
+
+          // this._getExpenseSet(sTeamKey, sPeriod, SacitveTab);
+
+          //oRowData.
+
+
+          //
+
+        //}
+
+        // 1. เรียกใช้ Service สำหรับการนำทางข้ามแอปพลิเคชัน
         var oCrossAppNavigator = sap.ushell.Container.getService("CrossApplicationNavigation");
 
-        // ใช้ toExternal เพื่อทำการนำทางไปทันที
+        // 2. ใช้ toExternal เพียงครั้งเดียวเพื่อสั่งให้นำทางไปทันที
+        // โค้ดส่วนนี้ของคุณถูกต้องและสมบูรณ์ที่สุดแล้วครับ
         oCrossAppNavigator.toExternal({
           target: {
             semanticObject: "Expense",
             action: "displayDetail"
           },
           params: {
-            Requestor: "CHUSANA",
-            PeriodMonth: "202507",
+            Requestor: oRowData.Requestor,
+            PeriodMonth: oRowData.PeriodMonth,
             Mode: "Display",
-            ProjectId: "TN1",
-            CalendarId: "Z3"
+            ProjectId: oRowData.ProjId,
+            CalendarId: oRowData.CalendarId
           }
         });
 
-        oCrossAppNavigator.toExternal({
-          target: {
-            shellHash: hash
-          }
-        });
-
+        // ไม่ต้องมีโค้ดส่วนอื่นหลังจากนี้ในฟังก์ชันนี้
       },
 
 
@@ -575,7 +586,7 @@ sap.ui.define([
         if (!this._rejectDialog) {
           this._rejectDialog = Fragment.load({
             id: oView.getId(),
-            name: "expenseviewapproval.view.Reject",
+            name: "zui5hr0012.view.Reject",
             //name: "expenseview.view.Reject",
             controller: this
           }).then(function (oDialog) {
@@ -648,7 +659,7 @@ sap.ui.define([
         var sTable = this.byId("tableExpense");
         var sColumns = sTable.getColumns();
 
-        debugger;
+
         if (vStatus == "NotSubmit") {
           var sSet = "/NotSubmitSet"
           var sStausdesc = "Not Submitted"
