@@ -1,7 +1,7 @@
 {
   "_version": "1.17.0",
   "sap.app": {
-    "id": "expenseviewapproval",
+    "id": "zui5hr0012",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -60,7 +60,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "expenseviewapproval.i18n.i18n"
+          "bundleName": "zui5hr0012.i18n.i18n"
         }
       },
       "": {
@@ -81,7 +81,7 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "expenseviewapproval.view",
+        "viewPath": "zui5hr0012.view",
         "controlAggregation": "pages",
         "controlId": "app",
         "clearControlAggregation": false
@@ -106,7 +106,7 @@
       }
     },
     "rootView": {
-      "viewName": "expenseviewapproval.view.App",
+      "viewName": "zui5hr0012.view.App",
       "type": "XML",
       "async": true,
       "id": "App"
