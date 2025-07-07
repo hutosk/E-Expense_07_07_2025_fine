@@ -1,1 +1,11 @@
 /* Enter your custom styles here */
+.tableContainerBorder {
+    padding: 25px;
+    box-shadow: none;   /* Or add shadow if needed */
+    background-color: white;
+}
+
+.footerLine {
+  border-top: 2px solid black;
+  margin-top: 4px;
+}
